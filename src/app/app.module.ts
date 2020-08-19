@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AgGridModule } from 'ag-grid-angular';
-//import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   
 const routes: Routes = [
 
-//{path: 'formupdate', component: HeroDetailComponent},
+{path: 'test', component: HeroDetailComponent},
 {path: 'user', component: UserComponent},
 {path: 'home', component: AppComponent}
 
@@ -19,7 +19,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [AppComponent,  UserComponent],
+  declarations: [AppComponent, HeroDetailComponent, UserComponent],
   imports: [
     BrowserModule,
     AgGridModule.withComponents([]),
