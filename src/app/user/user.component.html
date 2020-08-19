@@ -1,0 +1,80 @@
+<body> 
+<ag-grid-angular
+style="width: 900px; height: 400px;"
+class="ag-theme-alpine"
+(gridReady)="onGridReady($event)"
+(selectionChanged])="onSelectionChanged($event)"
+(click)="onSelectionChanged(rowData)"
+[defaultColDef]="defaultColDef"
+[columnDefs]="columnDefs"
+[rowData]="rowData"
+[rowSelection] = "rowSelection"
+
+>
+</ag-grid-angular>
+
+<div *ngIf="selectedAll" >
+
+<table>
+  <tr>
+    <td align="right"><label>No.</label></td>
+    <td><label >{{selectedAll.no}}</label></td>
+  </tr>
+<tr>
+  <td align="right"><label>Name</label></td>
+  <td><input type="text" [(ngModel)]="selectedAll.name"></td>
+</tr>
+
+<tr>
+  <td align="right"><label>Occupation</label></td>
+  <td><input type="text"[(ngModel)]="selectedAll.occ"></td>
+</tr>
+
+<!--checkbox-->
+<tr>
+  <td align="right">
+    <input  type="checkbox" (click)="check_btn()" [checked]="isChecked"></td>
+    <td><label>More Detail</label></td>
+</tr>
+<tr>
+  <td align="right"><label>Birthdate</label></td>
+  <td><input type="date"  [disabled]="Check2" [(ngModel)]="selectedAll.bd"> </td>
+</tr>
+
+<tr>
+  <td align="right"><label>Address</label></td>
+  <td><textarea rows="1" cols="25" id="add" [disabled]="Check2" [(ngModel)]="selectedAll.ad"></textarea><br></td>
+</tr>
+
+<tr>
+  <td align="right"><label>PS.</label></td>
+  <td><textarea rows="4" cols="25" id="ps" [disabled]="Check2" [(ngModel)]="selectedAll.ps"></textarea><br></td>
+</tr>
+
+<!-- File -->
+<tr>
+  <td align="right"><label>Attached</label></td>
+  <td><input type="file" id="file" (change)="file_check($event.target.files)"></td>
+</tr>
+<tr>
+  <td align="right"><label>File Name</label></td>
+  <td><label id="fileN">{{fileN}}</label></td>
+</tr>
+<tr>
+  <td align="right"><label>File Size</label></td>
+  <td><label id="size">{{fileS}}</label></td>
+</tr>
+
+<!-- Button upload -->
+<tr>
+  <td align="right">
+    <button  class="button" (click)="register()">Register</button>
+</td>
+</tr>
+
+</table>
+</div>
+</body>
+
+
+
