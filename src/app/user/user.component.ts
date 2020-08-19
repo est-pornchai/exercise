@@ -100,9 +100,9 @@ export class UserComponent {
   this.fileS = " ";
   
   }
-  onGridReady(params){
-  this.gridApi = params.api;
-  this.gridColumnApi = params.columnApi;
+  onGridReady(test){
+  this.gridApi = test.api;
+  this.gridColumnApi = test.columnApi;
   
   }
 
@@ -111,7 +111,7 @@ export class UserComponent {
   this.fileN = this.file.name
   let x = this.file.size
   let n1 = Math.round((x / 1024));
-  this.fileS = n1+'kb'
+  this.fileS = n1+' kb'
   }
 
 
