@@ -22,27 +22,27 @@ class="ag-theme-alpine"
 <label >{{selected.no}}</label></p>
 
 <p><span ng-show   style="color:red" >Name :</span>
-<input type="text" [ngModel]="selected.name">
+<input type="text" [(ngModel)]="selected.name">
 
 </p>
 
 <p><span ng-show   style="color:red" >Occupation :</span>
-<input type="text"[ngModel]="selected.occ" >
+<input type="text"[(ngModel)]="selected.occ" >
 </p>
 
 
 <input  type="checkbox" (click)="check_btn()" ><span ng-show   style="color:red" >More Detail :</span>
     
     <p><span ng-show   style="color:red" >Birthdate :</span>
-    <input  type="date" [disabled]="Check2" [ngModel]="selected.ad">
+    <input  type="date" [disabled]="Check2" [(ngModel)]="selected.bd">
     </p>
 
     <p><span ng-show   style="color:red" >Address :</span>
-        <input type="email" [disabled]="Check2" [ngModel]="selected.ad" >
+        <input type="text" [disabled]="Check2" [(ngModel)]="selected.ad" >
         </p>
 
         <p><span ng-show   style="color:red" >PS :</span>
-            <input type="ps" [disabled]="Check2" [ngModel]="selected.ps">
+            <input type="text" [disabled]="Check2" [(ngModel)]="selected.ps">
             </p>
 
             <p><span ng-show   style="color:red" >Attached :</span>
