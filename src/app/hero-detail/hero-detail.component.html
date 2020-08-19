@@ -14,47 +14,51 @@ class="ag-theme-alpine"
 >
 </ag-grid-angular>
 <div *ngIf="selected" >
+
+
 <h2>Member</h2>
 
-<p>No.
+<p><span ng-show   style="color:red" >No :</span>
 <label >{{selected.no}}</label></p>
 
-<p>Name:
+<p><span ng-show   style="color:red" >Name :</span>
 <input type="text" [ngModel]="selected.name">
+
 </p>
 
-<p>Occupation:
+<p><span ng-show   style="color:red" >Occupation :</span>
 <input type="text"[ngModel]="selected.occ" >
 </p>
 
 
-    <input  type="checkbox" (click)="check_btn()" ><label>More Detail</label>
+<input  type="checkbox" (click)="check_btn()" ><span ng-show   style="color:red" >More Detail :</span>
     
-    <p>BirthDate:
+    <p><span ng-show   style="color:red" >Birthdate :</span>
     <input  type="date" [disabled]="Check2" [ngModel]="selected.ad">
     </p>
 
-    <p>Address:
+    <p><span ng-show   style="color:red" >Address :</span>
         <input type="email" [disabled]="Check2" [ngModel]="selected.ad" >
         </p>
 
-        <p>PS.:
+        <p><span ng-show   style="color:red" >PS :</span>
             <input type="ps" [disabled]="Check2" [ngModel]="selected.ps">
             </p>
 
-                <p>Attached
+            <p><span ng-show   style="color:red" >Attached :</span>
                 <input type="file" id="file" (change)="file_check($event.target.files)"></p>
               
-                <p>File Name
+                <p><span ng-show   style="color:red" >File Name :</span>
                 <label id="fileN">{{fileN}}</label></p>
            
-                <p>File Size
+                <p><span ng-show   style="color:red" >File Size :</span>
                 <label id="size">{{fileS}}</label></p>
           
 
 
     <button  class="button" (click)="register()">Register</button>
 
-
 </div>
+
+
 </body>
