@@ -102,10 +102,11 @@ export class UserComponent {
   }
   onGridReady(test){
   this.gridApi = test.api;
-  this.gridColumnApi = test.columnApi;
+  this.gridColumnApi.columnApi;
   
   }
 
+    
   file_check(file){
   this.file = file.item(0)
   this.fileN = this.file.name

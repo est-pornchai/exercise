@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+
+<body>
+    <ag-grid-angular
+style="width: 900px; height: 400px;"
+class="ag-theme-alpine"
+(gridReady)="onGridReady($event)"
+(click)="onSelectionChanged(rowData)"
+[defaultColDef]="defaultColDef"
+[columnDefs]="columnDefs"
+[rowData]="rowData"
+[rowSelection] = "rowSelection"
+>
+</ag-grid-angular>
+<div *ngIf="selected" >
+<h2>Member</h2>
+
+<p>No.
+<label >{{selected.no}}</label></p>
+
+<p>Name:
+<input type="text" [ngModel]="selected.name">
+</p>
+
+<p>Occupation:
+<input type="text"[ngModel]="selected.occ" >
+</p>
+
+
+    <input  type="checkbox" (click)="check_btn()" ><label>More Detail</label>
+    
+    <p>BirthDate:
+    <input  type="date" [disabled]="Check2" [ngModel]="selected.ad">
+    </p>
+
+    <p>Address:
+        <input type="email" [disabled]="Check2" [ngModel]="selected.ad" >
+        </p>
+
+        <p>PS.:
+            <input type="ps" [disabled]="Check2" [ngModel]="selected.ps">
+            </p>
+
+                <p>Attached
+                <input type="file" id="file" (change)="file_check($event.target.files)"></p>
+              
+                <p>File Name
+                <label id="fileN">{{fileN}}</label></p>
+           
+                <p>File Size
+                <label id="size">{{fileS}}</label></p>
+          
+
+
+    <button  class="button" (click)="register()">Register</button>
+
+
+</div>
+</body>
